@@ -6,13 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <EditText
+        android:id="@+id/txtEnviar"
+        android:layout_width="259dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="120dp"
+        android:ems="10"
+        android:hint="Texto a Enviar"
+        android:inputType="text"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/btnEnviar"
+        android:layout_width="172dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="68dp"
+        android:hint="Enviar"
+        android:text="Enviar"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEnviar" />
+
+    <TextView
+        android:id="@+id/texto"
+        android:layout_width="162dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="76dp"
+        android:hint="Texto a Enviar"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEnviar" />
 </androidx.constraintlayout.widget.ConstraintLayout>
