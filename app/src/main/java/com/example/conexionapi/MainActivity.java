@@ -3,6 +3,10 @@ package com.example.conexionapi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.gms.wearable.CapabilityClient;
 import com.google.android.gms.wearable.CapabilityInfo;
@@ -25,9 +29,22 @@ public class MainActivity extends AppCompatActivity implements
         MessageClient.OnMessageReceivedListener,
         CapabilityClient.OnCapabilityChangedListener {
 
+    private static final String COUNT_KEY = "CodigoMensaje";
+    private static final String COUNT_KEY2 = "TextoMensaje";
+    DataClient mDataClient;
+    TextView textoRecibido;
+    EditText textoEnviar;
+    Button btnEnviar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        textoRecibido = findViewById(R.id.texto);
+        textoEnviar = findViewById(R.id.txtEnviar);
+        btnEnviar = findViewById(R.id.btnEnviar);
+
+        
     }
 }
