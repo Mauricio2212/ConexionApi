@@ -1,5 +1,6 @@
 package com.example.conexionapi;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements
     private void sendStuff(String datos) {
         mDataClient = Wearable.getDataClient(this);
         PutDataMapRequest putDataMapReq = PutDataMapRequest.create("/ messageMobile").setUrgent();
-        // putDataMapReq.getDataMap().putInt(COUNT_KEY, 100);
+        //putDataMapReq.getDataMap().putInt(COUNT_KEY, 100);
         putDataMapReq.getDataMap().putString(COUNT_KEY2, datos);
         PutDataRequest putDataReq = putDataMapReq.asPutDataRequest().setUrgent();
         Task<DataItem> putDataTask = mDataClient.putDataItem(putDataReq);
@@ -73,6 +74,21 @@ public class MainActivity extends AppCompatActivity implements
                 Toast.makeText(getApplicationContext(), "eviado", Toast.LENGTH_LONG).show();
             }
         });
+
+    }
+
+    @Override
+    public void onCapabilityChanged(@NonNull CapabilityInfo capabilityInfo) {
+
+    }
+
+    @Override
+    public void onDataChanged(@NonNull DataEventBuffer dataEventBuffer) {
+
+    }
+
+    @Override
+    public void onMessageReceived(@NonNull MessageEvent messageEvent) {
 
     }
 }
