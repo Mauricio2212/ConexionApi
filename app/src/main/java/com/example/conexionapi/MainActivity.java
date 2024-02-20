@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements
 
     private void sendStuff(String datos) {
         mDataClient = Wearable.getDataClient(this);
-        PutDataMapRequest putDataMapReq = PutDataMapRequest.create("/ messageMobile").setUrgent();
+        PutDataMapRequest putDataMapReq = PutDataMapRequest.create("/messageMobile").setUrgent();
         //putDataMapReq.getDataMap().putInt(COUNT_KEY, 100);
         putDataMapReq.getDataMap().putString(COUNT_KEY2, datos);
         PutDataRequest putDataReq = putDataMapReq.asPutDataRequest().setUrgent();
