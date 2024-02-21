@@ -48,5 +48,16 @@ public class MainActivity extends Activity  implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        textoRecibido = findViewById(R.id.texto);
+        textoEnviar = findViewById(R.id.txtMensaje);
+        btnEnviar = findViewById(R.id.btnEnviar);
+
+        btnEnviar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //sendStuff(textoEnviar.getText().toString());
+            }
+        });
     }
 }
