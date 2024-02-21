@@ -30,7 +30,19 @@ import com.google.android.gms.wearable.PutDataMapRequest;
 import com.google.android.gms.wearable.PutDataRequest;
 import com.google.android.gms.wearable.Wearable;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity  implements
+    DataClient.OnDataChangedListener,
+    MessageClient.OnMessageReceivedListener,
+    CapabilityClient.OnCapabilityChangedListener {
+
+    private TextView textoRecibido;
+    private EditText textoEnviar;
+    private Button btnEnviar;
+
+    DataClient mDataClient;
+
+    private static final String COUNT_KEY = "CodigoMensaje";
+    private static final String COUNT_KEY2 = "TextoMensaje";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
