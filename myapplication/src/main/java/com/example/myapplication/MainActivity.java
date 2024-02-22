@@ -60,4 +60,24 @@ public class MainActivity extends Activity  implements
             }
         });
     }
+
+    protected void onResume() {
+        super.onResume();
+
+        Wearable.getDataClient(this).addListener(this);
+        Wearable.getMessageClient(this).addListener(
+                this, Uri.parse("mobile://"),
+                CapabilityClient.FILTER_REACHABLE);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        Wearable.getDataClient(this).removeListener(this);
+        Wearable.getMessageClient(this).removeListener(this);
+        Wearable.getCapabilityClient(this).removeListener(this);
+    }
+
+    
 }
