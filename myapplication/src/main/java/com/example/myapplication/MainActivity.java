@@ -84,7 +84,6 @@ public class MainActivity extends Activity  implements
 
         Toast.makeText(getApplicationContext(), "Se recibio informacion", Toast.LENGTH_LONG).show();
         for (DataEvent event : dataEventBuffer) {
-            if (DataEvent event : dataEventBuffer) {
                 if (event.getType() == DataEvent.TYPE_CHANGED) {
                     //DataItem changed
                     DataItem item = event.getDataItem();
@@ -99,11 +98,10 @@ public class MainActivity extends Activity  implements
                 }
             }
         }
-    }
 
     @Override
     public void onCapabilityChanged(@NonNull CapabilityInfo capabilityInfo) {
-        
+
     }
 
     @Override
