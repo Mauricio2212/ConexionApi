@@ -100,4 +100,14 @@ public class MainActivity extends Activity  implements
             }
         }
     }
+
+    @Override
+    public void onCapabilityChanged(@NonNull CapabilityInfo capabilityInfo) {
+        
+    }
+
+    @Override
+    public void onMessageReceived(@NonNull MessageEvent messageEvent) {
+
+    }
 }
