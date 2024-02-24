@@ -79,5 +79,25 @@ public class MainActivity extends Activity  implements
         Wearable.getCapabilityClient(this).removeListener(this);
     }
 
-    
+    @Override
+    public void onDataChanged(@NonNull DataEventBuffer dataEventBuffer) {
+
+        Toast.makeText(getApplicationContext(), "Se recibio informacion", Toast.LENGTH_LONG).show();
+        for (DataEvent event : dataEventBuffer) {
+            if (DataEvent event : dataEventBuffer) {
+                if (event.getType() == DataEvent.TYPE_CHANGED) {
+                    //DataItem changed
+                    DataItem item = event.getDataItem();
+                    if (item.getUri().getPath().compareTo("/messageMobile") == 0) {
+                        DataMap dataMap =DataMapItem.fromDataItem(item).getDataMap();
+                        // Toast.makeText(getApplicationContext(), String.valueOf(dataMap.getInt(COUNT_KEY)), Toast.LENGTH_LONG).show();
+
+                        textoRecibido.setText("Texto desde Movil:" +String.valueOf(dataMap.getString(COUNT_KEY2)));
+                    }
+                } else if (event.getType() == DataEvent.TYPE_DELETED) {
+                    //DataItem deleted
+                }
+            }
+        }
+    }
 }
