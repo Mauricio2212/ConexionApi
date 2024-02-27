@@ -1,6 +1,4 @@
-package com.example.myapplication;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.conexionapi;
 
 import android.os.Bundle;
 
@@ -14,8 +12,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.gms.wearable.CapabilityClient;
 import com.google.android.gms.wearable.CapabilityInfo;
 import com.google.android.gms.wearable.DataClient;
@@ -26,8 +22,6 @@ import com.google.android.gms.wearable.DataMap;
 import com.google.android.gms.wearable.DataMapItem;
 import com.google.android.gms.wearable.MessageClient;
 import com.google.android.gms.wearable.MessageEvent;
-import com.google.android.gms.wearable.PutDataMapRequest;
-import com.google.android.gms.wearable.PutDataRequest;
 import com.google.android.gms.wearable.Wearable;
 
 public class MainActivity extends Activity  implements
@@ -88,8 +82,8 @@ public class MainActivity extends Activity  implements
                     //DataItem changed
                     DataItem item = event.getDataItem();
                     if (item.getUri().getPath().compareTo("/messageMobile") == 0) {
-                        DataMap dataMap =DataMapItem.fromDataItem(item).getDataMap();
-                        // Toast.makeText(getApplicationContext(), String.valueOf(dataMap.getInt(COUNT_KEY)), Toast.LENGTH_LONG).show();
+                        DataMap dataMap = DataMapItem.fromDataItem(item).getDataMap();
+                        //Toast.makeText(getApplicationContext(), String.valueOf(dataMap.getInt(COUNT_KEY)), Toast.LENGTH_LONG).show();
 
                         textoRecibido.setText("Texto desde Movil:" +String.valueOf(dataMap.getString(COUNT_KEY2)));
                     }
